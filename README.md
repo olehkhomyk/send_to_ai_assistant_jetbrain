@@ -1,4 +1,6 @@
-# Send to AI Assistant — WebStorm Plugin
+# Send to AI Assistant
+
+JetBrains plugin for WebStorm and IntelliJ IDEA Ultimate.
 
 Select code → `⌥⇧A` → code with filename and line numbers is pasted into the AI Assistant chat.
 
@@ -34,9 +36,16 @@ cd send-to-ai-plugin
 
 > The first build may take 5–10 minutes — it downloads the WebStorm SDK (~1GB)
 
-## Installation in WebStorm
+## Compatibility
 
-1. WebStorm → **Settings** → **Plugins**
+- WebStorm
+- IntelliJ IDEA Ultimate
+
+The plugin depends on the bundled `JavaScript` plugin, so IntelliJ IDEA Community is not a supported target.
+
+## Installation in JetBrains IDEs
+
+1. WebStorm or IntelliJ IDEA Ultimate → **Settings** → **Plugins**
 2. Gear icon (⚙️) → **Install Plugin from Disk...**
 3. Select `build/distributions/send-to-ai-plugin-1.0.0.zip`
 4. Restart WebStorm
@@ -54,6 +63,6 @@ cd send-to-ai-plugin
 
 **Text is not pasted automatically?**
 This may be caused by macOS permissions for the Robot API.
-Solution: System Preferences → Privacy & Security → Accessibility → add WebStorm.
+Solution: System Preferences → Privacy & Security → Accessibility → add your JetBrains IDE.
 
 The text will still be in the clipboard — just press `⌘V` manually in the chat input field.

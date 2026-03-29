@@ -1,14 +1,6 @@
 <idea-plugin>
-    <id>com.github.sendtoai</id>
-    <name>Send to AI Assistant</name>
-    <version>1.0.0</version>
-    <vendor>okhomyk</vendor>
-
-    <description>
-        Виділи код → хоткей → текст з файлом і рядками вставляється в AI Assistant чат.
-    </description>
-
     <depends>com.intellij.modules.platform</depends>
+    <depends>JavaScript</depends>
 
     <actions>
         <action
@@ -16,11 +8,7 @@
             class="com.github.sendtoai.SendToAIAction"
             text="Send to AI Assistant Chat"
             description="Copy selected code with file context and paste into AI Assistant">
-
-            <!-- Контекстне меню в редакторі -->
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
-
-            <!-- Хоткей: Option+Shift+A (macOS) / Alt+Shift+A (Win/Linux) -->
             <keyboard-shortcut
                 keymap="$default"
                 first-keystroke="alt shift A"/>
