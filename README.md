@@ -1,59 +1,59 @@
 # Send to AI Assistant — WebStorm Plugin
 
-Виділяєш код → `⌥⇧A` → код з файлом і рядками вставляється в AI Assistant чат.
+Select code → `⌥⇧A` → code with filename and line numbers is pasted into the AI Assistant chat.
 
-## Що робить
+## What it does
 
-1. Бере виділений текст з редактора
-2. Формує повідомлення: назва файлу, рядки, код у блоці
-3. Відкриває AI Assistant панель
-4. Вставляє текст у поле вводу (НЕ відправляє — можеш дописати питання)
+1. Takes the selected text from the editor
+2. Formats a message: filename, line range, code in a code block
+3. Opens the AI Assistant panel
+4. Pastes the text into the input field (does NOT send — you can add your question first)
 
-**Приклад результату в чаті:**
+**Example output in chat:**
 ```
 File: `UserService.ts` lines 42–58
 ```
-// твій виділений код
+// your selected code
 ```
 ```
 
-## Збірка
+## Build
 
-**Потрібно:** JDK 17+, інтернет (для завантаження Gradle і WebStorm SDK)
+**Requirements:** JDK 17+, internet connection (to download Gradle and WebStorm SDK)
 
 ```bash
-# Клонуй або розпакуй проект
+# Clone or unpack the project
 cd send-to-ai-plugin
 
-# Збери плагін
+# Build the plugin
 ./gradlew buildPlugin
 
-# Плагін буде тут:
+# The plugin will be located at:
 # build/distributions/send-to-ai-plugin-1.0.0.zip
 ```
 
-> Перша збірка може зайняти 5–10 хвилин — завантажується WebStorm SDK (~1GB)
+> The first build may take 5–10 minutes — it downloads the WebStorm SDK (~1GB)
 
-## Встановлення в WebStorm
+## Installation in WebStorm
 
 1. WebStorm → **Settings** → **Plugins**
-2. Шестерня (⚙️) → **Install Plugin from Disk...**
-3. Вибери `build/distributions/send-to-ai-plugin-1.0.0.zip`
-4. Перезапусти WebStorm
+2. Gear icon (⚙️) → **Install Plugin from Disk...**
+3. Select `build/distributions/send-to-ai-plugin-1.0.0.zip`
+4. Restart WebStorm
 
-## Використання
+## Usage
 
-- Виділи код → правий клік → **Send to AI Assistant Chat**
-- Або хоткей: `⌥⇧A` (macOS) / `Alt+Shift+A` (Windows/Linux)
+- Select code → right-click → **Send to AI Assistant Chat**
+- Or use the hotkey: `⌥⇧A` (macOS) / `Alt+Shift+A` (Windows/Linux)
 
-## Зміна хоткея
+## Changing the hotkey
 
-**Settings** → **Keymap** → пошук `Send to AI Assistant Chat` → призначи свій.
+**Settings** → **Keymap** → search for `Send to AI Assistant Chat` → assign your own.
 
 ## Troubleshooting
 
-**Текст не вставляється автоматично?**
-Це може бути через права доступу macOS до Robot API.
-Рішення: System Preferences → Privacy & Security → Accessibility → додай WebStorm.
+**Text is not pasted automatically?**
+This may be caused by macOS permissions for the Robot API.
+Solution: System Preferences → Privacy & Security → Accessibility → add WebStorm.
 
-Текст все одно буде в буфері — просто натисни `⌘V` вручну в полі чату.
+The text will still be in the clipboard — just press `⌘V` manually in the chat input field.
