@@ -1,6 +1,6 @@
 # Send to AI Assistant
 
-JetBrains plugin for WebStorm and IntelliJ IDEA Ultimate.
+JetBrains plugin for all IDEs that have the AI Assistant plugin installed.
 
 Select code → `⌥⇧A` → code with filename and line numbers is pasted into the AI Assistant chat.
 
@@ -21,7 +21,7 @@ File: `UserService.ts` lines 42–58
 
 ## Build
 
-**Requirements:** JDK 17+, internet connection (to download Gradle and WebStorm SDK)
+**Requirements:** JDK 17+, internet connection (to download Gradle and IntelliJ IDEA Community SDK)
 
 ```bash
 # Clone or unpack the project
@@ -31,24 +31,33 @@ cd send-to-ai-plugin
 ./gradlew buildPlugin
 
 # The plugin will be located at:
-# build/distributions/send-to-ai-plugin-1.0.0.zip
+# build/distributions/send-to-ai-plugin-1.1.0.zip
 ```
 
-> The first build may take 5–10 minutes — it downloads the WebStorm SDK (~1GB)
+> The first build may take 5–10 minutes — it downloads the IntelliJ IDEA Community SDK (~700 MB)
 
 ## Compatibility
 
-- WebStorm
-- IntelliJ IDEA Ultimate
+Works with any JetBrains IDE that has the **AI Assistant plugin** installed:
 
-The plugin depends on the bundled `JavaScript` plugin, so IntelliJ IDEA Community is not a supported target.
+- IntelliJ IDEA (Community & Ultimate)
+- WebStorm
+- PyCharm (Community & Professional)
+- PhpStorm
+- GoLand
+- RubyMine
+- CLion
+- Rider
+- RustRover
+- DataGrip
+- Android Studio
 
 ## Installation in JetBrains IDEs
 
-1. WebStorm or IntelliJ IDEA Ultimate → **Settings** → **Plugins**
+1. Open your JetBrains IDE → **Settings** → **Plugins**
 2. Gear icon (⚙️) → **Install Plugin from Disk...**
-3. Select `build/distributions/send-to-ai-plugin-1.0.0.zip`
-4. Restart WebStorm
+3. Select `build/distributions/send-to-ai-plugin-1.1.0.zip`
+4. Restart the IDE
 
 ## Usage
 
@@ -61,8 +70,9 @@ The plugin depends on the bundled `JavaScript` plugin, so IntelliJ IDEA Communit
 
 ## Troubleshooting
 
+**AI Assistant tool window not found?**
+Make sure the JetBrains AI Assistant plugin is installed and enabled in your IDE (Settings → Plugins → Marketplace → search "AI Assistant").
+
 **Text is not pasted automatically?**
 This may be caused by macOS permissions for the Robot API.
 Solution: System Preferences → Privacy & Security → Accessibility → add your JetBrains IDE.
-
-The text will still be in the clipboard — just press `⌘V` manually in the chat input field.
