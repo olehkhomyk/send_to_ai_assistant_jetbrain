@@ -1,6 +1,36 @@
 <idea-plugin>
     <depends>com.intellij.modules.platform</depends>
 
+    <description><![CDATA[
+        <p>Send selected code to JetBrains AI Assistant — with the file name and line numbers already attached.</p>
+
+        <p>No more switching windows, copying code, and typing "this is from file X line Y". Select the code, press the shortcut, and start asking your question.</p>
+
+        <h2>How to use</h2>
+        <ol>
+            <li>Select any code in the editor.</li>
+            <li>Press <b>Alt+Shift+A</b> (macOS: <b>⌥⇧A</b>), or right-click → <b>Send to AI Assistant Chat</b>.</li>
+            <li>The AI Assistant panel opens with the chat input pre-filled:<br/>
+                <code>@file:UserService.kt [lines 42 to 58]</code>
+            </li>
+            <li>Type your question and press Enter.</li>
+        </ol>
+        <p>The message is inserted but <b>not sent automatically</b> — you can review and add context before submitting.</p>
+
+        <h2>How to change the shortcut</h2>
+        <ol>
+            <li>Open <b>Settings</b> → <b>Keymap</b>.</li>
+            <li>Search for <b>Send to AI Assistant Chat</b>.</li>
+            <li>Double-click → <b>Add Keyboard Shortcut</b> → press your keys → OK.</li>
+        </ol>
+
+        <h2>Requirements</h2>
+        <ul>
+            <li>The <a href="https://plugins.jetbrains.com/plugin/22282-ai-assistant">JetBrains AI Assistant</a> plugin must be installed and enabled.</li>
+            <li>Works in all JetBrains IDEs: IntelliJ IDEA, PyCharm, WebStorm, PhpStorm, GoLand, CLion, Rider, RubyMine, RustRover, DataGrip, Android Studio.</li>
+        </ul>
+    ]]></description>
+
     <actions>
         <action
             id="SendToAIAssistant"
